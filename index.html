@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Opalite iPod</title>
-  <link rel="icon" href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/star-icon.png" type="image/png">
+  <link rel="icon" href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/star-icon.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(#121212, #000000);
-      font-family: sans-serif;
+      background: radial-gradient(#1a1a1a, #000000);
+      font-family: 'Press Start 2P', monospace;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,15 +19,16 @@
     }
 
     .ipod-body {
-      width: 300px;
-      height: 550px;
-      background: linear-gradient(145deg, #d4d4d4, #f0f0f0);
-      border-radius: 40px;
-      box-shadow: 0 0 30px rgba(255, 165, 0, 0.3);
+      width: 320px;
+      height: 580px;
+      background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+      border-radius: 50px;
+      box-shadow: inset -4px -4px 10px #ffffff, inset 4px 4px 10px #aaaaaa, 0 0 30px rgba(255, 165, 0, 0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      border: 2px solid #999;
     }
 
     .ipod-screen {
@@ -35,8 +37,10 @@
       background-color: #000;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: inset 0 0 10px #333;
+      box-shadow: inset 0 0 15px #333;
       margin-bottom: 20px;
+      border: 4px solid #444;
+      position: relative;
     }
 
     .ipod-screen video {
@@ -46,19 +50,20 @@
     }
 
     .ipod-quote {
-      font-size: 0.9em;
+      font-size: 0.6em;
       color: #ffa500;
       font-style: italic;
       text-align: center;
       margin-bottom: 20px;
+      text-shadow: 0 0 5px #ff8c00;
     }
 
     .click-wheel {
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background-color: #ff8c00;
-      box-shadow: 0 0 10px #ff8c00;
+      background: radial-gradient(circle at center, #ff8c00 0%, #cc7000 100%);
+      box-shadow: inset -4px -4px 10px #ffa500, inset 4px 4px 10px #994400, 0 0 10px #ff8c00;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -70,37 +75,48 @@
       height: 80px;
       border-radius: 50%;
       background-color: #121212;
-      color: white;
-      font-size: 1em;
-      text-align: center;
-      line-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 0 5px #fff;
       position: absolute;
       cursor: pointer;
-      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
     .center-button:hover {
       background-color: #ff4500;
+    }
+
+    .center-button::before {
+      content: "▶";
+      color: white;
+      font-size: 1.5em;
     }
   </style>
 </head>
 <body>
   <div class="ipod-body">
     <div class="ipod-screen">
-      <video autoplay muted loop playsinline>
+      <video id="opalite-video" autoplay muted loop playsinline>
         <source src="https://dl.dropboxusercontent.com/scl/fi/hn0x4tueosbtp4xbtyhxr/ssstwitter.com_1759493429164.mp4?rlkey=utomhzucoyubhd0icosjxlzgh&st=je8zxjgk" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
     <div class="ipod-quote">
-      But my mama told me, ‘It's alright. You were dancing through the lightning strikes.’”
+      “But my mama told me, ‘It's alright. You were dancing through the Opalite.’”
     </div>
     <div class="click-wheel">
-      <a class="center-button" href="https://music.apple.com/ph/album/opalite/1833328839?i=1833328845" target="_blank">
-        ▶
-      </a>
+      <div class="center-button" onclick="playWithSound()"></div>
     </div>
   </div>
+
+  <script>
+    function playWithSound() {
+      const video = document.getElementById('opalite-video');
+      video.muted = false;
+      video.play();
+    }
+  </script>
 </body>
 </html>
