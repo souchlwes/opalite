@@ -3,112 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opalite</title>
+  <title>Opalite iPod</title>
   <link rel="icon" href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/star-icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      background-image: radial-gradient(#121212, #000000);
-      background-size: cover;
-      background-attachment: fixed;
-      font-family: 'Cinzel Decorative', cursive;
+      background: radial-gradient(#121212, #000000);
+      font-family: sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      animation: fadeIn 2s ease-in;
     }
-    .ipod {
+
+    .ipod-body {
+      width: 300px;
+      height: 550px;
       background: linear-gradient(145deg, #d4d4d4, #f0f0f0);
       border-radius: 40px;
-      width: 320px;
-      padding: 20px;
       box-shadow: 0 0 30px rgba(255, 165, 0, 0.3);
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
-    .screen {
+
+    .ipod-screen {
+      width: 260px;
+      height: 200px;
       background-color: #000;
       border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 20px;
+      overflow: hidden;
       box-shadow: inset 0 0 10px #333;
+      margin-bottom: 20px;
     }
-    .screen h1 {
-      font-family: Helvetica, sans-serif;
-      font-size: 1.5em;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #ffa500;
-      margin: 10px 0;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    .screen video {
+
+    .ipod-screen video {
       width: 100%;
-      border-radius: 12px;
+      height: 100%;
+      object-fit: cover;
     }
-    .quote {
-      font-size: 1em;
+
+    .ipod-quote {
+      font-size: 0.9em;
       color: #ffa500;
       font-style: italic;
-      margin-top: 10px;
-      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+      margin-bottom: 20px;
     }
+
     .click-wheel {
-      background-color: #ff8c00;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      width: 160px;
-      height: 160px;
-      margin: 0 auto;
+      background-color: #ff8c00;
+      box-shadow: 0 0 10px #ff8c00;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 0 10px #ff8c00;
+      position: relative;
     }
-    .music-button {
+
+    .center-button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
       background-color: #121212;
       color: white;
       font-size: 1em;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 20px;
+      text-align: center;
+      line-height: 80px;
       box-shadow: 0 0 5px #fff;
-      transition: background-color 0.3s ease;
+      position: absolute;
+      cursor: pointer;
+      text-decoration: none;
     }
-    .music-button:hover {
+
+    .center-button:hover {
       background-color: #ff4500;
-    }
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #ffa500, 0 0 20px #ff8c00;
-      }
-      to {
-        text-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="ipod">
-    <div class="screen">
-      <h1>✨ OPALITE</h1>
+  <div class="ipod-body">
+    <div class="ipod-screen">
       <video autoplay muted loop playsinline>
         <source src="https://dl.dropboxusercontent.com/scl/fi/hn0x4tueosbtp4xbtyhxr/ssstwitter.com_1759493429164.mp4?rlkey=utomhzucoyubhd0icosjxlzgh&st=je8zxjgk" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <div class="quote">
-        “But my mama told me, ‘It's alright. You were dancing through the Opalite.’”
-      </div>
+    </div>
+    <div class="ipod-quote">
+      But my mama told me, ‘It's alright. You were dancing through the lightning strikes.’”
     </div>
     <div class="click-wheel">
-      <a class="music-button" href="https://music.apple.com/ph/album/opalite/1833328839?i=1833328845" target="_blank">
-        ▶ Listen 🎵
+      <a class="center-button" href="https://music.apple.com/ph/album/opalite/1833328839?i=1833328845" target="_blank">
+        ▶
       </a>
     </div>
   </div>
