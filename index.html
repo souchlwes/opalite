@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opalite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffa500;
+      font-family: 'Cinzel Decorative', cursive;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-family: Helvetica, sans-serif;
+      font-size: 3.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #ffa500;
+      text-shadow: 0 0 10px #ffa500, 0 0 20px #ff8c00, 0 0 30px #ff4500;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    .quote {
+      font-size: 2.2em;
+      margin-top: 30px;
+      font-style: italic;
+      text-shadow: 0 0 8px #ffa500, 0 0 16px #ff8c00;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    video {
+      margin-top: 40px;
+      max-width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    }
+    .music-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 28px;
+      background-color: #ff8c00;
+      color: white;
+      font-size: 1.3em;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff8c00;
+      transition: background-color 0.3s ease;
+    }
+    .music-button:hover {
+      background-color: #ff4500;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ffa500, 0 0 20px #ff8c00;
+      }
+      to {
+        text-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ OPALITE</h1>
+
+  <video autoplay muted loop playsinline>
+    <source src="https://dl.dropboxusercontent.com/scl/fi/hn0x4tueosbtp4xbtyhxr/ssstwitter.com_1759493429164.mp4?rlkey=utomhzucoyubhd0icosjxlzgh&st=je8zxjgk" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="quote">
+    “But my mama told me, ‘It's alright. You were dancing through the Opalite.’”
+  </div>
+
+  <a class="music-button" href="https://music.apple.com/ph/album/opalite/1833328839?i=1833328845" target="_blank">
+    Listen to Opalite 🎵
+  </a>
+</body>
+</html>
